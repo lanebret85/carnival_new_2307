@@ -32,6 +32,9 @@ RSpec.describe Visitor do
 
   describe "#tall_enough?" do
     it "can check if a visitor is tall enough to ride given the height requirement" do
+      visitor2 = Visitor.new('Tucker', 36, '$5')
+      visitor3 = Visitor.new('Penny', 64, '$15')
+
       expect(@visitor1.tall_enough?(54)).to eq(true)
       expect(visitor2.tall_enough?(54)).to eq(false)
       expect(visitor3.tall_enough?(54)).to eq(true)
