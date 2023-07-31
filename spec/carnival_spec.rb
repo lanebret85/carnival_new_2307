@@ -27,10 +27,15 @@ RSpec.describe Carnival do
     it "can add a ride to its list of rides and return the list" do
       cool_carnival = Carnival.new(10)
 
+      thunderstruck = Ride.new({ name: 'Thunderstruck', min_height: 46, admission_fee: 2, excitement: :thrilling })
+      lightning_bolt = Ride.new({ name: 'Lightning Bolt', min_height: 54, admission_fee: 5, excitement: :thrilling })
+      chill_vibes = Ride.new({ name: 'Chill Vibes', min_height: 24, admission_fee: 1, excitement: :gentle })
+
       cool_carnival.add_ride(thunderstruck)
       cool_carnival.add_ride(lightning_bolt)
+      cool_carnival.add_ride(chill_vibes)
 
-      expect(cool_carnival.rides).to eq([thunderstruck, lightning_bolt])
+      expect(cool_carnival.rides).to eq([thunderstruck, lightning_bolt, chill_vibes])
     end
   end
 
