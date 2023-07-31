@@ -26,4 +26,11 @@ class Carnival
     end
     @ride_revenues.key(@ride_revenues.values.max)
   end
+
+  def total_revenue
+    @rides.each do |ride|
+      @ride_revenues[ride] = ride.total_revenue
+    end
+    @ride_revenues.values.sum
+  end
 end
